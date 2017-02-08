@@ -4,11 +4,28 @@
  * Write a function that calculates the sum of all the numbers in an array
  */
 
+var sumOfArray = function(array) {
+	var total = 0
+	for (var i = 0; i < array.length; i++) {
+		total = total + array[i]
+	}
+	return total
+ }
+
 // PART 1
 
 // Write a function maxOfArray() that takes an array of
 // numbers as an argument and returns the highest number in the array.
 
+var maxOfArray = function(array) {
+	var max = 0
+	for (var i = 0; i < array.length; i++) {
+		if (array[i] > max) {
+			max = array[i]
+		}
+	}
+    return max
+}
 
 /**
  * PART 2
@@ -16,6 +33,15 @@
  * Write a function isVowel() that takes a character (i.e. a string of length 1)
  * as input and returns true if it is a vowel, false otherwise.
  */
+
+var isVowel = function(str) {
+	var vowelArr = ['a', 'A', 'e', 'E', 'i','I', 'o', 'O', 'u', 'U']
+	for (var i = 0; i < vowelArr.length; i++) {
+		if (vowelArr[i] === str)
+			return true
+	} 
+	return false
+}
 
 
 /**
@@ -26,6 +52,14 @@
  * reverse("skoob") should return the
  * string "books".
  */
+
+var reverse = function(str) {
+    var newStr = "";
+    for (var i = str.length - 1; i >= 0; i--) { 
+        newStr = newStr + str[i];
+    }
+    return newStr;
+}
 
 
 /**
@@ -42,6 +76,25 @@
  For the number 15, the fizzbuzz string is "..fizz.buzzfizz..fizzbuzz.fizz..fizzbuzz"
  */
 
+var fizzbuzz = function(num) {
+    var newString = ""
+    for (var i = 1; i <= num; i++) {
+        if (i % 3 !== 0 && i % 5 !== 0) {
+            newString += "."
+        }
+        if (i % 3 === 0 && i % 5 !== 0) {
+            newString += "fizz"
+        }
+        if (i % 3 !== 0 && i % 5 === 0) {
+            newString += "buzz"
+        }
+        if (i % 3 === 0 && i % 5 === 0) {
+            newString += "fizzbuzz"
+        }
+    }
+    return newString
+}
+
 
 /**
  * Part 5
@@ -50,6 +103,17 @@
  words and returns the longest word.
  * i.e. findLongestWord("a book full of dogs") should return "book"
  */
+
+var findLongestWord = function(str) {
+ 	var newArray = str.split(' ')
+ 	var longestWord = ''
+ 	for (var i = 0; i < newArray.length; i++) {
+ 		if (newArray[i].length > longestWord.length) {
+			longestWord = newArray[i]
+		}
+ 	}
+ 	return longestWord
+ }
 
 
 /**
