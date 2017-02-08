@@ -19,6 +19,9 @@ var sumOfArray = function(array) {
 
 var maxOfArray = function(array) {
 	var max = 0
+	if (array.length === 0) {
+		return null
+	}
 	for (var i = 0; i < array.length; i++) {
 		if (array[i] > max) {
 			max = array[i]
